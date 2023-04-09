@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    position:relative;
+    overflow-x:hidden;
+}
+
+.container{
+    height:100vh;
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+
+.premiereDiv{
+    width:50%;
+    background-image:url(img/tigre.jpg);
+    background-size:cover;
+    /* height:100%; */
+}
+
+.deuxiemeDiv{
+    width:50%;
+    background-image:url(img/guepard.jpg);
+    background-size:cover;
+    /* height:100%; */
+}
+
+.premiereDiv,.deuxiemeDiv{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    transition:transform 0.8s,background-image 0.8s 0.5s;
+  
+    
+}
+
+.premiereClassHiden,.deuxiemeClassHiden{
+    transform:scale(0);
+    transition:transform 0.8s;
+    transition-delay:0.8s
+}
+
+.premiereClassHidenActive{
+    transform:scale(1) translateX(-50%);
+    position:absolute;
+    top:20%;
+    left:calc(100% + 50%);
+    font-family: 'Pacifico', cursive;
+ 
+}
+
+.deuxiemeClassHidenActive{
+    transform:scale(1) translateX(-50%);
+    position:absolute;
+    top:20%;
+    left:calc(-100% + 50%);
+    font-family: 'Pacifico', cursive;
+}
+
+/* .premiereDivActive{
+
+} */
+
+.premiereDiv.activePremiereDiv{
+    transform:translateX(-100%);
+    
+    /* background-image:url(img/guepard.jpg); */
+    
+ 
+   
+
+    /* border-right:3px solid black;
+    height:100%; */
+    /* z-index:1; */
+    
+}
+
+.container{
+    transition:opacity 0.8s;
+    
+
+}
+
+.container.activeContainer1{
+    background-color:coral ;
+    
+  
+    
+}
+
+
+.deuxiemeDiv.activeDeuxiemeDiv{
+    transform:translateX(100%);
+}
+
+.button1.activePremierBouton{
+    display:none;
+}
+
+.button2.activeDeuxiemeBouton{
+    display:none;
+}
+
+.button1,.button2,.bouton1Revenir,.bouton2Revenir{
+    font-size:calc(12px + 1vw);
+    padding:20px 40px;
+    border-radius:30px;
+    background:rgba(0,0,0,0.5);
+    color:white;
+    cursor:pointer;
+    
+}
+
+.bouton1Revenir,.bouton2Revenir{
+   transform:scale(0);
+   transition:transform 0.8s;
+   transition-delay:0.7s
+}
+
+.bouton1RevenirActive{
+    transform:scale(1) translateX(-50%);
+    position:absolute;
+    top:70%;
+    left:calc(100% + 50%);
+    
+
+}
+
+.bouton2RevenirActive{
+    transform:scale(1) translateX(-50%);
+    position:absolute;
+    top:70%;
+    left:calc(-100% + 50%);
+}
+
+
+
+h1{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    text-align:center;
+    font-family: 'Pacifico', cursive;
+    font-size:calc(20px + 2vw);
+    padding-top:10px;
+
+}
+
+.paragrapheClassHidden1,.paragrapheClassHidden2{
+    /* display:none; */
+    transform:scale(0);
+    transition:transform 0.8s;
+    transition-delay:0.8s;
+
+}
+
+.paragrapheClassHiddenActive1{
+    position:absolute;
+    top:50%;
+    left:150%;
+  
+    font-size:calc(12px + 1vw)
+
+}
+
+.paragrapheClassHiddenActive2{
+    position:absolute;
+    top:50%;
+    left:calc(-100% + 50%);
+    font-size:calc(12px + 1vw)
+}
+
+.paragrapheClassHidden1.paragrapheClassHiddenActive1,.paragrapheClassHidden2.paragrapheClassHiddenActive2{
+    /* display:block; */
+    /* opacity:1; */
+    /* width:200% */
+    transform:scale(1)translateX(-50%) ;
+  
+    white-space:nowrap;
+
+}
+
+@media screen and (max-width:500px){
+    .container{
+        flex-direction:column !important;
+       
+    }
+
+    .premiereDiv,.deuxiemeDiv{
+        width:100% !important;
+        height:50%;
+    }
+
+    .premiereClassHidenActive{
+        top:25%;
+    }
+
+    .paragrapheClassHiddenActive2{
+        position:absolute;
+        top:50%;
+       
+      
+       
+    
+    }
+} 
